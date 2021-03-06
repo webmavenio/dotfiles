@@ -1,40 +1,61 @@
-set exrc
-set guicursor=
-set relativenumber
-set nu
-set nohlsearch
-set hidden
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set scrolloff=8
-set colorcolumn=80
-set signcolumn=yes
+source $HOME/.config/nvim/plugins.vim
 
+
+let mapleader = " "
+
+set autoindent
+set expandtab
+set shiftround
+set shiftwidth=4
+set smarttab
+set tabstop=4
+
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+
+set display+=lastline
+set encoding=utf-8
+set linebreak
+set scrolloff=1
+set sidescrolloff=5
+syntax enable
+set wrap
+
+set laststatus=2
+set ruler
+set wildmenu
+set tabpagemax=50
+set cursorline
+set number
+set relativenumber
+set noerrorbells
+set visualbell
+set mouse=a
+set title
+
+set foldmethod=indent
+set foldnestmax=3
+set nofoldenable
+
+set autoread
+set backspace=indent,eol,start
+set backupdir=~/.cache/vim
+set confirm
+set noswapfile
+set hidden
+set history=1000
+set nomodeline
+set shell
+set spell
 set termguicolors
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-
 colorscheme tokyonight
+let g:airline_theme = "tokyonight"
 
-call plug#begin('~/.vim/plugged')
 
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-
-Plug 'phanviet/vim-monokai-pro'
-Plug 'ghifarit53/tokyonight-vim'
-
-call plug#end()
-
-let mapleader = " "
-
+source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/treesitter.vim
