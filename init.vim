@@ -47,15 +47,53 @@ set noswapfile
 set hidden
 set history=1000
 set nomodeline
-set shell
 set spell
 set termguicolors
 
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 let g:airline_theme = "tokyonight"
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+set background=dark
+set cursorline
+
 
 
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/treesitter.vim
+
+
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+  split term://bash
+  resize 5 
+endfunction
+nnoremap <c-n> :call OpenTerminal()<CR>
+
+
+" use alt+hjkl to move between split/vsplit panels
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+nnoremap <leader>fs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
+nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>fg :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
+nnoremap <leader>fh :lua require('telescope.builtin').help_tags()<CR>
+
+" move among buffers with CTRL
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+
+nnoremap <C-u> :UndotreeToggle<CR>

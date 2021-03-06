@@ -14,15 +14,12 @@ Plug 'mhinz/vim-startify'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'vim-airline/vim-airline'
 
+
+Plug 'mbbill/undotree'
 
 call plug#end()
 
-" Telescope
-nnoremap <leader>fs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
-nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-julia', 'coc-svelte', 'coc-go']
 
-nnoremap <leader>fw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
-nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
-nnoremap <leader>fh :lua require('telescope.builtin').help_tags()<CR>
