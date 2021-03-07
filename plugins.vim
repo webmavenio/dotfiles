@@ -15,11 +15,19 @@ Plug 'mhinz/vim-startify'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 
+Plug 'tpope/vim-liquid'
+
+Plug 'moll/vim-bbye'
 
 Plug 'mbbill/undotree'
 
+Plug 'tpope/vim-fugitive'
+
+
+
 call plug#end()
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-julia', 'coc-svelte', 'coc-go']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-julia', 'coc-svelte', 'coc-go', 'coc-explorer', 'coc-pairs']
 
