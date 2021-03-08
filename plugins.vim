@@ -25,6 +25,8 @@ Plug 'mbbill/undotree'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'lifepillar/vim-solarized8'
+
 
 
 call plug#end()

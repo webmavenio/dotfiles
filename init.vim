@@ -50,7 +50,7 @@ set nomodeline
 set spell
 set termguicolors
 
-colorscheme tokyonight
+colorscheme tokyonight 
 let g:airline_theme = "tokyonight"
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
