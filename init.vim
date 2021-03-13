@@ -18,7 +18,7 @@ set smartcase
 set display+=lastline
 set encoding=utf-8
 set linebreak
-set scrolloff=1
+set scrolloff=10
 set sidescrolloff=5
 syntax enable
 set wrap
@@ -49,12 +49,19 @@ set history=1000
 set nomodeline
 set spell
 set termguicolors
+set cursorcolumn 
 
-colorscheme tokyonight 
-let g:airline_theme = "tokyonight"
+set background=light
+let g:one_allow_italics = 1
+colorscheme one
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-set background=dark
 set cursorline
 
 
