@@ -9,6 +9,8 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'kdheepak/lazygit.nvim'
+
 
 Plug 'mhinz/vim-startify'
 
@@ -25,6 +27,8 @@ Plug 'tpope/vim-liquid'
 Plug 'moll/vim-bbye'
 
 Plug 'mbbill/undotree'
+
+Plug 'ajmwagar/vim-deus'
 
 Plug 'chriskempson/tomorrow-theme'
 Plug 'chriskempson/base16-vim'

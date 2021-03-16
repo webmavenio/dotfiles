@@ -51,14 +51,19 @@ set spell
 set termguicolors
 set cursorcolumn 
 
-set background=light
 let g:one_allow_italics = 1
-colorscheme one
 
+colorscheme one
+set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace
+
+
+let g:airline_theme='one'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
+
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
@@ -125,3 +130,12 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Git push<CR>
 nnoremap <space>gpl :Git pull<CR>
+
+set t_Co=256
+set termguicolors
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+nnoremap <silent> <leader>lg :LazyGit<CR>
+
