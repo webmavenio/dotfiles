@@ -14,7 +14,6 @@ Plug 'kdheepak/lazygit.nvim'
 
 Plug 'mhinz/vim-startify'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
@@ -22,24 +21,13 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'rakr/vim-one'
 
-Plug 'tpope/vim-liquid'
 
 Plug 'moll/vim-bbye'
 
 Plug 'mbbill/undotree'
 
-Plug 'ajmwagar/vim-deus'
+Plug 'sheerun/vim-polyglot'
 
-Plug 'chriskempson/tomorrow-theme'
-Plug 'chriskempson/base16-vim'
-Plug 'nlknguyen/papercolor-theme'
-Plug 'sainnhe/edge'
-
-Plug 'nathanaelkane/vim-indent-guides'
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'lifepillar/vim-solarized8'
 
 Plug 'tpope/vim-commentary'
 
