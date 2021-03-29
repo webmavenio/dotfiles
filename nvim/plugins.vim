@@ -11,23 +11,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'kdheepak/lazygit.nvim'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'code-biscuits/nvim-biscuits'
 
 Plug 'mhinz/vim-startify'
 
-
-Plug 'edkolev/tmuxline.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 Plug 'rakr/vim-one'
-
 
 Plug 'moll/vim-bbye'
 
 Plug 'mbbill/undotree'
 
 Plug 'sheerun/vim-polyglot'
-
 
 Plug 'tpope/vim-commentary'
 

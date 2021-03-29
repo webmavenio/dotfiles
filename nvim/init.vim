@@ -53,8 +53,7 @@ set cursorcolumn
 
 let g:one_allow_italics = 1
 
-colorscheme one
-set background=dark
+colorscheme tokyonight 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
 
@@ -88,9 +87,9 @@ nnoremap <A-l> <C-w>l
 
 nnoremap <leader>fs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
-nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>ff :lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<CR>
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
-nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
+nnoremap <leader>fb :lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({}))<CR>
 nnoremap <leader>fh :lua require('telescope.builtin').help_tags()<CR>
 
 " move among buffers with CTRL
@@ -111,4 +110,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 nnoremap <silent> <leader>lg :LazyGit<CR>
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 
