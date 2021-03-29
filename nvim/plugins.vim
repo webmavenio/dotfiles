@@ -27,6 +27,9 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'tpope/vim-commentary'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+
 
 call plug#end()
 

@@ -113,4 +113,5 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+nmap <leader>mdp  <Plug>MarkdownPreviewToggle
 
