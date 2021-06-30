@@ -51,22 +51,25 @@ set spell
 set termguicolors
 set cursorcolumn 
 
-let g:one_allow_italics = 1
 
-colorscheme tokyonight 
-let base16colorspace=256  " Access colors present in 256 colorspace
-
-
-let g:airline_theme='one'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
+colorscheme one 
+set background=dark
 
 
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-set cursorline
+" let g:one_allow_italics = 1
+" let base16colorspace=256  " Access colors present in 256 colorspace
+" let g:tempus_enforce_background_color=1
+
+
+" let g:airline_theme='one'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#formatter = 'default'
+
+
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 1
 
 
 
@@ -76,19 +79,20 @@ source $HOME/.config/nvim/coc.vim
 
 
 " use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+tnoremap <leader>wh <C-\><C-n><C-w>h
+tnoremap <leader>wj <C-\><C-n><C-w>j
+tnoremap <leader>wk <C-\><C-n><C-w>k
+tnoremap <leader>wl <C-\><C-n><C-w>l
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
 
 nnoremap <leader>fs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
+" nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<CR>
-nnoremap <leader>fg :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+" nnoremap <leader>fg :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb :lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({}))<CR>
 nnoremap <leader>fh :lua require('telescope.builtin').help_tags()<CR>
 
@@ -111,7 +115,32 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+nmap <leader>for :CocCommand prettier.formatFile<CR>
 
 nmap <leader>mdp  <Plug>MarkdownPreviewToggle
 
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+nnoremap j jzz
+nnoremap k kzz
+
+" autocmd BufEnter *.liquid :set ft=html
+" autocmd BufEnter *.scss.liquid :set ft=scss
+
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)

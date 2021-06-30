@@ -1,11 +1,21 @@
-call plug#begin('~/.vim/plugged')
+ call plug#begin('~/.vim/plugged')
 
+Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+
+
+Plug 'TovarishFin/vim-solidity'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'romgrk/github-light.vim'
 Plug 'ghifarit53/tokyonight-vim'
+
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+Plug 'tpope/vim-liquid'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -13,9 +23,7 @@ Plug 'kdheepak/lazygit.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'code-biscuits/nvim-biscuits'
 
-Plug 'mhinz/vim-startify'
 
 Plug 'rakr/vim-one'
 
