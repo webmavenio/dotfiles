@@ -2,5 +2,8 @@
   "html.enable": true,
   "html.filetypes": ["html", "handlebars", "htmldjango", "blade", "liquid"],
   "html.autoClosingTags": true,
-  "html.format.enable": true
+  "html.format.enable": true,
+  "html.format.indentHandlebars": true,
+  "html.format.contentUnformatted": "pre,code,textarea,schema,endschema",
+  "html.format.wrapAttributes": "force-expand-multiline"
 }

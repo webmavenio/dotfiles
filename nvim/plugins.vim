@@ -1,6 +1,24 @@
- call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhartington/oceanic-next'
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'edkolev/tmuxline.vim'
+
+Plug 'kdheepak/lazygit.nvim'
+Plug 'caenrique/nvim-toggle-terminal'
+
 
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+
+Plug 'w0ng/vim-hybrid'
+
+Plug 'flrnprz/plastic.vim'
+
+Plug 'jnurmine/zenburn'
+
 
 
 Plug 'TovarishFin/vim-solidity'
@@ -24,6 +42,9 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+Plug 'dikiaap/minimalist'
 
 Plug 'rakr/vim-one'
 

@@ -51,9 +51,20 @@ set spell
 set termguicolors
 set cursorcolumn 
 
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
 
-colorscheme one 
+
+colorscheme hybrid 
 set background=dark
+
 
 
 " let g:one_allow_italics = 1
@@ -68,8 +79,8 @@ set background=dark
 " let g:airline#extensions#tabline#formatter = 'default'
 
 
-" let g:tokyonight_style = 'night' " available: night, storm
-" let g:tokyonight_enable_italic = 1
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 
 
 
@@ -114,6 +125,11 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 nnoremap <silent> <leader>lg :LazyGit<CR>
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
+let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
 
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -121,8 +137,13 @@ nmap <leader>for :CocCommand prettier.formatFile<CR>
 
 nmap <leader>mdp  <Plug>MarkdownPreviewToggle
 
-xmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-formatFile)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup autoindent
+    au!
+    autocmd BufWritePre * :normal migg=G`i
+augroup End
 
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -136,11 +157,22 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-nnoremap j jzz
-nnoremap k kzz
+" nnoremap j jzz
+" nnoremap k kzz
 
 " autocmd BufEnter *.liquid :set ft=html
 " autocmd BufEnter *.scss.liquid :set ft=scss
 
 xmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
+
+let g:coc_filetype_map = {
+            \ 'liquid': 'html',
+            \ }
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme='hybrid'
+
+nnoremap <silent> <C-z> :ToggleTerminal<Enter>
+tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
